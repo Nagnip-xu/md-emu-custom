@@ -33,6 +33,7 @@ public:
 	AssetDesc vControllerAssetDesc(KeyInfo) const;
 	static std::span<const KeyCategory> keyCategories();
 	static std::span<const KeyConfigDesc> defaultKeyConfigs();
+        static std::span<const KeyConfigDesc> defaultAppKeyConfigs();
 	static std::string_view systemKeyCodeToString(KeyCode);
 	static bool allowsTurboModifier(KeyCode);
 

@@ -115,10 +115,10 @@ std::span<const KeyConfigDesc> MdApp::defaultKeyConfigs()
 
 	static constexpr std::array pcKeyboardMap
 	{
-		KeyMapping{MdKey::Up, Keycode::UP},
-		KeyMapping{MdKey::Right, Keycode::RIGHT},
-		KeyMapping{MdKey::Down, Keycode::DOWN},
-		KeyMapping{MdKey::Left, Keycode::LEFT},
+		KeyMapping{MdKey::Up, Keycode::GAME_X},
+		KeyMapping{MdKey::Right, Keycode::GAME_A},
+		KeyMapping{MdKey::Down, Keycode::GAME_C},
+		KeyMapping{MdKey::Left, Keycode::GAME_B},
 		KeyMapping{MdKey::Mode, Keycode::SPACE},
 		KeyMapping{MdKey::Start, Keycode::ENTER},
 		KeyMapping{MdKey::A, Keycode::Z},
@@ -131,17 +131,17 @@ std::span<const KeyConfigDesc> MdApp::defaultKeyConfigs()
 
 	static constexpr std::array genericGamepadMap
 	{
-		KeyMapping{MdKey::Up, Keycode::UP},
-		KeyMapping{MdKey::Right, Keycode::RIGHT},
-		KeyMapping{MdKey::Down, Keycode::DOWN},
-		KeyMapping{MdKey::Left, Keycode::LEFT},
-		KeyMapping{MdKey::Mode, Keycode::GAME_SELECT},
-		KeyMapping{MdKey::Start, Keycode::GAME_START},
-		KeyMapping{MdKey::A, Keycode::GAME_X},
-		KeyMapping{MdKey::B, Keycode::GAME_A},
-		KeyMapping{MdKey::C, Keycode::GAME_B},
-		KeyMapping{MdKey::X, Keycode::GAME_L1},
-		KeyMapping{MdKey::Y, Keycode::GAME_Y},
+		KeyMapping{MdKey::Up, Keycode::GAME_X},
+		KeyMapping{MdKey::Right, Keycode::GAME_A},
+		KeyMapping{MdKey::Down, Keycode::GAME_C},
+		KeyMapping{MdKey::Left, Keycode::GAME_B},
+		KeyMapping{MdKey::Mode, Keycode::GAME_Y},
+		KeyMapping{MdKey::Start, Keycode::GAME_L2},
+		KeyMapping{MdKey::A, Keycode::GAME_R2},
+		KeyMapping{MdKey::B, Keycode::GAME_START},
+		KeyMapping{MdKey::C, Keycode::GAME_SELECT},
+		KeyMapping{MdKey::X, Keycode::GAME_Z},
+		KeyMapping{MdKey::Y, Keycode::GAME_L1},
 		KeyMapping{MdKey::Z, Keycode::GAME_R1},
 	};
 
@@ -160,6 +160,15 @@ std::span<const KeyConfigDesc> MdApp::defaultKeyConfigs()
 	};
 
 	return genericKeyConfigs<pcKeyboardMap, genericGamepadMap, wiimoteMap>();
+}
+
+std::span<const KeyConfigDesc> MdApp::defaultAppKeyConfigs()
+{
+    using namespace IG::Input;
+    
+    // Return empty array to disable all default app key configs
+    static constexpr std::array<KeyConfigDesc, 0> appKeyConfigs{};
+    return appKeyConfigs;
 }
 
 bool MdApp::allowsTurboModifier(KeyCode c)
