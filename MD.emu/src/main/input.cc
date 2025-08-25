@@ -113,21 +113,9 @@ std::span<const KeyConfigDesc> MdApp::defaultKeyConfigs()
 {
 	using namespace IG::Input;
 
-	static constexpr std::array pcKeyboardMap
-	{
-		KeyMapping{MdKey::Up, Keycode::GAME_X},
-		KeyMapping{MdKey::Right, Keycode::GAME_A},
-		KeyMapping{MdKey::Down, Keycode::GAME_C},
-		KeyMapping{MdKey::Left, Keycode::GAME_B},
-		KeyMapping{MdKey::Mode, Keycode::SPACE},
-		KeyMapping{MdKey::Start, Keycode::ENTER},
-		KeyMapping{MdKey::A, Keycode::Z},
-		KeyMapping{MdKey::B, Keycode::X},
-		KeyMapping{MdKey::C, Keycode::C},
-		KeyMapping{MdKey::X, Keycode::A},
-		KeyMapping{MdKey::Y, Keycode::S},
-		KeyMapping{MdKey::Z, Keycode::D},
-	};
+	static constexpr std::array<KeyMapping, 0> pcKeyboardMap
+        {
+        };
 
 	static constexpr std::array genericGamepadMap
 	{
